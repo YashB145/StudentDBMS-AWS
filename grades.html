@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grades</title>
+    <style>
+        body { font-family: Arial; padding: 30px; background: #f0f2f5; }
+        h2 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th { background: #2ecc71; color: white; padding: 10px; }
+        td { padding: 10px; border-bottom: 1px solid #ddd; text-align: center; }
+        .btn { padding: 8px 16px; background: #3498db; color: white;
+               text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2>📊 Grades & Report</h2>
+    <a href="/" class="btn">🏠 Home</a>
+    <br><br>
+    <table>
+        <tr>
+            <th>Roll No</th><th>Name</th><th>Course</th><th>Course Name</th>
+            <th>Internal</th><th>External</th><th>Total</th><th>Grade</th><th>Points</th>
+        </tr>
+        {% for g in grades %}
+        <tr>
+            <td>{{ g[0] }}</td><td>{{ g[1] }}</td><td>{{ g[2] }}</td>
+            <td>{{ g[3] }}</td><td>{{ g[4] }}</td><td>{{ g[5] }}</td>
+            <td>{{ g[6] }}</td><td>{{ g[7] }}</td><td>{{ g[8] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

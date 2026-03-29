@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enroll Student</title>
+    <style>
+        body { font-family: Arial; padding: 30px; background: #f0f2f5; }
+        h2 { color: #2c3e50; }
+        form { background: white; padding: 30px; border-radius: 10px; max-width: 500px; }
+        select, input { width: 100%; padding: 10px; margin: 8px 0;
+                        border: 1px solid #ddd; border-radius: 5px; }
+        button { background: #2ecc71; color: white; padding: 12px 30px;
+                 border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .btn { padding: 8px 16px; background: #3498db; color: white;
+               text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2>📚 Enroll Student in Course</h2>
+    <a href="/" class="btn">🏠 Home</a>
+    <br><br>
+    <form method="POST">
+        <select name="student_id" required>
+            <option value="">Select Student</option>
+            {% for s in students %}
+            <option value="{{ s[0] }}">{{ s[1] }} - {{ s[2] }}</option>
+            {% endfor %}
+        </select>
+        <select name="course_id" required>
+            <option value="">Select Course</option>
+            {% for c in courses %}
+            <option value="{{ c[0] }}">{{ c[1] }} - {{ c[2] }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="academic_year" placeholder="Academic Year e.g. 2024-2025" required>
+        <input type="number" name="semester" placeholder="Semester (1-8)" required>
+        <input type="date" name="enrolled_on" required>
+        <button type="submit">Enroll Student</button>
+    </form>
+</body>
+</html>
